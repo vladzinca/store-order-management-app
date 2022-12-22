@@ -46,4 +46,8 @@ This only allows `P` level 2 threads to execute at the same, and works as intend
 
 ## 🤔 Did you know?
 
-The level 2 threads know from the level 1 thread that spawned them how many products there are in the order they search for, `order_nr_produse`, and so I wanted to make them stop reading products when all the products related to the order were shipped. To do that, we have to successfuly modify the `order_nr_produse` variable without creating a race condition. To do that, I parsed the variable into an AtomicInteger and modified it using its predefined methods.
+The level 2 threads know from the level 1 thread that spawned them how many products there are in the order they search for, `order_nr_produse`, and so I wanted to make them stop reading products when all the products related to the order were shipped.
+
+This means that we have to successfuly modify the `order_nr_produse` variable without creating a race condition.
+
+To do that, I parsed the variable into an AtomicInteger and modified it using its predefined methods.
