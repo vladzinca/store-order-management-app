@@ -28,7 +28,7 @@ I coded it in less than a day during mid-December 2022 and it helped me review t
 
 Regarding its functionality, I will try to be as concise and clear as I can.
 
-The program starts by spawning `P` level 1 threads, whose job is to read orders that are defined as lines inside the file `orders.txt`.
+The program starts by spawning `P` level 1 threads. Their job is to read orders that are defined as lines inside the file `orders.txt`.
 
 For every order they read, the level 1 threads attempt to spawn as many level 2 threads as `P` to read products from `order_products.txt`, check if they belong to the order the level 1 thread that spawned them handles, and if it they do ship them.
 
