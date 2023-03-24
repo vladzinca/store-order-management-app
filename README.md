@@ -30,9 +30,9 @@ Regarding its functionality, I will try to be as concise and clear as I can.
 
 The program starts by spawning `P` level 1 threads. Their job is to read orders that are defined as lines inside the file `orders.txt`.
 
-For every order they read, the level 1 threads attempt to spawn as many level 2 threads as `P` to read products from `order_products.txt`, check if they belong to the order the level 1 thread that spawned them handles, and if it they do ship them.
+For every order they read, the level 1 threads attempt to spawn as many level 2 threads as `P` to read products from `order_products.txt`, check if they belong to the order the level 1 thread that spawned them handles, and if they do, ship them.
 
-After all the products from `order_products.txt` have been read and the correct one have been shipped, the level 1 thread marks the whole order as shipped.
+After all the products from `order_products.txt` have been read and the correct ones have been shipped, the level 1 thread marks the whole order as shipped.
 
 This will eventually mark as shipped all the orders that have 1 or more products inside them.
 
